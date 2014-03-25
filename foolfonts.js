@@ -22,6 +22,8 @@ var foolfonts = {
      */
 
     init: function(options) {
+        if(!options) options = {};
+
         if(!("force" in options && options.force) && !this.is_april_1st()) {
             return;
         }
