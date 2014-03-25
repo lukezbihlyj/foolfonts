@@ -17,6 +17,8 @@ var foolfonts = {
      * Initiate the horrible, horrible process of iterating through each
      * element in the page and checking if it's renderable and doesn't
      * contain an already-ignored font.
+     *
+     * @param {object} options The options to set for the runtime.
      */
 
     init: function(options) {
