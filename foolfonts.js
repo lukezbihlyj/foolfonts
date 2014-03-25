@@ -22,15 +22,15 @@ var foolfonts = {
      */
 
     init: function(options) {
-        if(!options.force && !this.is_april_1st()) {
+        if(!("force" in options && options.force) && !this.is_april_1st()) {
             return;
         }
 
         this.ignore("Comic Sans MS");
 
-        if(options.ignore && typeof options.ignore === "string") {
+        if("ignore" in options && typeof options.ignore === "string") {
             this.ignore(options.ignore);
-        } else if(options.ignore && typeof options.ignore === "array") {
+        } else if("ignore" in options && typeof options.ignore === "array") {
             for(var i in options.ignore) {
                 this.ignore(options.ignore[i]);
             }
