@@ -23,7 +23,9 @@ $(function() {
 });
 ```
 
-Now somewhere on your page (probably in the `<head>` section of your document) you need to run `foolfonts.init()`. The optional parameters to pass are listed below:
+Now somewhere on your page (probably in the `<head>` section of your document) you need to run `foolfonts.init()`. The optional parameters to pass are listed below.
+
+## Options
 
 | Key            | Format                     |
 | -------------- | -------------------------- |
