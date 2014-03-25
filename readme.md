@@ -1,6 +1,6 @@
 # FoolFonts
 
-> Making great websites even greater with the use of our beloved Comic Sans exclusively on April 1st!
+FoolFonts converts your entire website into Comic Sans for one day and one day only - our beloved April 1st. Very lightweight, highly efficient and rather ridiculous are the three Web 6.0 buzzwords that we use to spread propaganda about this product.
 
 ## Usage
 
