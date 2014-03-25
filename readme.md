@@ -2,6 +2,8 @@
 
 FoolFonts converts your entire website into Comic Sans for one day and one day only - our beloved April 1st. Very lightweight, highly efficient and rather ridiculous are the three Web 6.0 buzzwords that we use to spread propaganda about this product.
 
+![Hacker News with FoolFonts](https://github.com/lukezbihlyj/foolfonts/raw/master/example.png "Hacker News with FoolFonts")
+
 ## Usage
 
 ```html
