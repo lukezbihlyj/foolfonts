@@ -20,11 +20,11 @@ var foolfonts = {
      */
 
     init: function(options) {
-    	if(!options.force && !this.is_april_1st()) {
-    		return;
-    	}
+        if(!options.force && !this.is_april_1st()) {
+            return;
+        }
 
-    	this.ignore("Comic Sans MS");
+        this.ignore("Comic Sans MS");
 
         if(options.ignore && typeof options.ignore === "string") {
             this.ignore(options.ignore);
@@ -59,10 +59,10 @@ var foolfonts = {
      */
 
     check: function(element, font) {
-    	var lowercase = font.toLowerCase();
+        var lowercase = font.toLowerCase();
 
-    	for(var j in this._ignore) {
-        	if(lowercase.indexOf(this._ignore[j]) !== -1) return;
+        for(var j in this._ignore) {
+            if(lowercase.indexOf(this._ignore[j]) !== -1) return;
         }
 
         element.style.fontFamily = "'Comic Sans MS', " + font;
@@ -74,7 +74,7 @@ var foolfonts = {
      */
 
     is_april_1st: function() {
-    	return new Date().getMonth() == 4 && new Date().getDate() == 1;
+        return new Date().getMonth() == 4 && new Date().getDate() == 1;
     },
 
     /**
