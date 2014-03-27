@@ -78,7 +78,7 @@ var foolfonts = {
      */
 
     is_april_1st: function() {
-        return new Date().getMonth() == 4 && new Date().getDate() == 1;
+        return new Date().getMonth() == 3 && new Date().getDate() == 1; // 3 is April, not 4.
     },
 
     /**
