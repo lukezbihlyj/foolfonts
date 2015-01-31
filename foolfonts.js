@@ -2,7 +2,6 @@
  * Simple library for setting the font of every element on a page to Comic
  * Sans with minimal effort.
  */
-
 var foolfonts = {
     /**
      * An array of font names to ignore, which will cause the parser to not
@@ -10,7 +9,6 @@ var foolfonts = {
      *
      * @var {array}
      */
-
     _ignore: [],
 
     /**
@@ -20,34 +18,33 @@ var foolfonts = {
      *
      * @param {object} options The options to set for the runtime.
      */
-
     init: function(options) {
-        if(!options) options = {};
+        options = options || {};
 
-        if(!("force" in options && options.force) && !this.is_april_1st()) {
+        if (!('force' in options && options.force) && !this.isAprilFirst()) {
             return;
         }
 
-        this.ignore("Comic Sans MS");
+        this.ignore('Comic Sans MS');
 
-        if("ignore" in options && typeof options.ignore === "string") {
+        if ('ignore' in options && typeof options.ignore === 'string') {
             this.ignore(options.ignore);
-        } else if("ignore" in options && typeof options.ignore === "array") {
-            for(var i in options.ignore) {
+        } elseif ('ignore' in options && typeof options.ignore === 'array') {
+            for (var i in options.ignore) {
                 this.ignore(options.ignore[i]);
             }
         }
 
-        var elements = document.documentElement.getElementsByTagName("*");
+        var elements = document.documentElement.getElementsByTagName('*');
 
-        for(var i in elements) {
+        for (var i in elements) {
             var element = elements[i];
             var computed = window.getComputedStyle(element) || element.currentStyle;
 
-            if(computed !== null && typeof computed !== "undefined") {
-                var font = "fontFamily" in computed && computed.fontFamily;
+            if (computed !== null && typeof computed !== 'undefined') {
+                var font = 'fontFamily' in computed && computed.fontFamily;
 
-                if(font !== null && typeof font === "string") {
+                if (font !== null && typeof font === 'string') {
                     this.check(element, font);
                 }
             }
@@ -61,23 +58,23 @@ var foolfonts = {
      * @param {object} element The element to check.
      * @param {string} font The currently applied font names.
      */
-
     check: function(element, font) {
         var lowercase = font.toLowerCase();
 
-        for(var j in this._ignore) {
-            if(lowercase.indexOf(this._ignore[j]) !== -1) return;
+        for (var j in this._ignore) {
+            if (lowercase.indexOf(this._ignore[j]) !== -1) {
+                return;
+            }
         }
 
-        element.style.fontFamily = "'Comic Sans MS', " + font;
+        element.style.fontFamily = '"Comic Sans MS", ' + font;
     },
 
     /**
      * Check if it currently April 1st, otherwise we really shouldn't be
      * destroying these websites...
      */
-
-    is_april_1st: function() {
+    isAprilFirst: function() {
         return new Date().getMonth() == 3 && new Date().getDate() == 1; // 3 is April, not 4.
     },
 
@@ -85,10 +82,9 @@ var foolfonts = {
      * Ignore the specified font, which we cast to lower case for easier
      * comparison later
      *
-     * @param {string} font_name The font name to ignore.
+     * @param {string} font The font name to ignore.
      */
-
-    ignore: function(font_name) {
-        this._ignore.push(font_name.toLowerCase());
+    ignore: function(font) {
+        this._ignore.push(font.toLowerCase());
     }
 };
