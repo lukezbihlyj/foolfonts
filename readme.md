@@ -13,12 +13,14 @@ FoolFonts converts your entire website into Comic Sans for one day and one day o
 First, include the library script somewhere on the page. It's a very small file if minified with the rest of your application, so you can integrate it with your compilation process if you wish to do so.
 
 ```js
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     foolfonts.init({
         force: true,
-        ignore: ["FontAwesome"]
+        ignore: ['FontAwesome']
     });
 });
+
+// Or with jQuery...
 
 $(function() {
     foolfonts.init();
